@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LOL地图修改器专业资源站，提供LOL自定义地图编辑器、游戏地图修改工具、以及LOL自定义模式（ARAM）地图资源下载。包含使用教程、工具介绍及安全注意事项。">
+    <meta name="keywords" content="LOL地图修改器,英雄联盟地图编辑器,LOL自定义地图,LOL工具,游戏修改">
+    <title>LOL地图修改器-自定义地图资源与工具下载指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #c89b3c;
+            --primary-hover: #e5b044;
+            --bg-dark: #1a1a1a;
+            --bg-card: #252525;
+            --text-main: #ffffff;
+            --text-secondary: #b0b0b0;
+            --border-color: #333333;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(26, 26, 26, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+            padding: 4rem 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #000;
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .tool-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .card-header {
+            height: 160px;
+            background-color: #333;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .tool-tag {
+            font-size: 0.8rem;
+            background-color: rgba(200, 155, 60, 0.2);
+            color: var(--primary-color);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .tool-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        .tool-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .download-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 0.6rem;
+            background-color: #333;
+            color: var(--text-main);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .download-btn:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: #000;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background-color: var(--bg-card);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+
+        .guide-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .step {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background-color: var(--primary-color);
+            color: #000;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .step-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Safety Notice */
+        .safety-box {
+            background-color: rgba(255, 87, 34, 0.1);
+            border: 1px solid rgba(255, 87, 34, 0.3);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .safety-box h3 {
+            color: #ff5722;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* FAQ */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .faq-item {
+            background-color: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .faq-item h4 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .faq-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 3rem 0;
+            border-top: 1px solid var(--border-color);
+            margin-top: 3rem;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            nav {
+                display: none; /* Simplified for mobile */
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/>
+                </svg>
+                <span>LOLMapTools</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">工具下载</a></li>
+                    <li><a href="#">教程指南</a></li>
+                    <li><a href="#">社区资源</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>LOL地图修改器与自定义地图资源</h1>
+            <p>探索英雄联盟（League of Legends）的无限可能。通过专业的地图修改器工具，体验自定义地图、特殊模式与创意玩法，打造属于你的游戏世界。</p>
+            <a href="#tools" class="cta-button">立即开始探索</a>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- 工具下载区 -->
+        <section id="tools">
+            <div class="section-title">
+                <span>热门工具与资源</span>
+                <a href="#" style="font-size: 0.9rem; color: var(--primary-color);">查看全部 &rarr;</a>
+            </div>
+            
+            <div class="tools-grid">
+                <!-- Card 1 -->
+                <article class="tool-card">
+                    <div class="card-header">
+                        <img src="https://picsum.photos/seed/lolmap1/400/250" alt="地图编辑器界面预览">
+                    </div>
+                    <div class="card-body">
+                        <span class="tool-tag">核心工具</span>
+                        <h3>LOL地图编辑器 (LE)</h3>
+                        <p>官方提供的专业地图编辑器，允许玩家创建全新的游戏地图、定义单位行为、编写自定义规则，是制作自定义模式的基础。</p>
+                        <a href="#" class="download-btn">下载编辑器</a>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="tool-card">
+                    <div class="card-header">
+                        <img src="https://picsum.photos/seed/lolmap2/400/250" alt="地图修改器工具预览">
+                    </div>
+                    <div class="card-body">
+                        <span class="tool-tag">辅助工具</span>
+                        <h3>LOL地图数据修改器</h3>
+                        <p>简易版修改工具，帮助玩家在不深入代码的情况下调整地图资源参数，如野怪刷新时间、河道视野范围等参数。</p>
+                        <a href="#" class="download-btn">下载工具</a>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="tool-card">
+                    <div class="card-header">
+                        <img src="https://picsum.photos/seed/lolmap3/400/250" alt="自定义地图预览">
+                    </div>
+                    <div class="card-body">
+                        <span class="tool-tag">地图资源</span>
+                        <h3>ARAM自定义地图包</h3>
+                        <p>包含大量ARAM（极地大乱斗）风格的自定义地图资源，拥有独特的地形设计、装饰物和背景音乐，适合快速娱乐。</p>
+                        <a href="#" class="download-btn">下载地图包</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 使用教程 -->
+        <section id="guide">
+            <div class="section-title">使用指南</div>
+            <div class="guide-section">
+                <div class="guide-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>准备环境</h4>
+                            <p>确保你的电脑已安装最新版的英雄联盟客户端。下载并解压你选择的地图修改器或编辑器工具。</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>备份游戏文件</h4>
+                            <p>在修改地图文件前，强烈建议备份游戏的“Game”文件夹，以防修改出错导致游戏崩溃或无法启动。</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>应用修改</h4>
+                            <p>将下载的地图文件复制到游戏目录的“Map”文件夹中，或按照工具说明导入地图数据。启动游戏选择“自定义游戏”即可进入。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="safety-box">
+                    <h3>
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                        安全提示
+                    </h3>
+                    <p>使用第三方修改器存在账号封禁风险。请仅下载来自可信来源的软件，并避免修改核心游戏数据以免违反服务条款。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 -->
+        <section id="faq">
+            <div class="section-title">常见问题 (FAQ)</div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>修改地图后游戏无法启动怎么办？</h4>
+                    <p>这通常是因为地图文件损坏或不兼容当前游戏版本。请检查文件完整性，并尝试下载兼容版本的地图资源。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>可以在自定义游戏中和朋友一起玩吗？</h4>
+                    <p>可以。只要双方都拥有相同的地图文件并放置在正确的目录下，就可以创建房间邀请好友进入自定义模式。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>哪里可以找到更多的创意地图？</h4>
+                    <p>可以访问官方创意工坊社区或相关的游戏论坛，玩家们会分享各种有趣的创意地图、道具和脚本。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>修改器会影响匹配系统的ELO吗？</h4>
+                    <p>使用地图修改器进入自定义房间通常不计入排位积分，但请注意，频繁的违规修改可能会触发系统的反作弊检测。</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 LOLMapTools. 专注于英雄联盟地图资源与工具分享。</p>
+            <p>本站内容仅供学习与交流使用，请支持正版游戏。所有资源版权归原作者所有。</p>
+        </div>
+    </footer>
+
+</body>
+</html>
