@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="西西外挂网提供最新、稳定、安全的游戏辅助工具下载与使用教程。涵盖热门游戏外挂、脚本配置、防封号指南及社区交流服务。">
+    <meta name="keywords" content="西西外挂网,游戏外挂,辅助工具,脚本下载,防封号,游戏攻略">
+    <title>西西外挂网-专业游戏辅助工具下载与防封指南</title>
+    <style>
+        :root {
+            --primary-color: #00e5ff;
+            --secondary-color: #2979ff;
+            --accent-color: #ff4081;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(15, 23, 42, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: var(--radius);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(180deg, rgba(15, 23, 42, 1) 0%, rgba(15, 23, 42, 0.8) 100%), 
+                        url('https://picsum.photos/seed/gamebg/1920/600') center/cover;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 16px;
+            background: linear-gradient(to right, #fff, var(--primary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+
+        .search-box {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            overflow: hidden;
+            padding: 4px;
+        }
+
+        .search-box input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 12px 20px;
+            color: var(--text-main);
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-box button {
+            background: var(--primary-color);
+            color: #000;
+            border: none;
+            padding: 0 24px;
+            border-radius: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .search-box button:hover {
+            background: #00b8cc;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+        }
+
+        .stats-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+        }
+
+        /* Section Styling */
+        .section-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+
+        .section-title h2 {
+            font-size: 22px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 12px;
+        }
+
+        .section-title a {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .section-title a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Game Grid */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .game-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.2s, border-color 0.2s;
+            position: relative;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 140px;
+            background-color: #334155;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            font-size: 12px;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .card-content {
+            padding: 16px;
+        }
+
+        .card-content h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .card-btn {
+            width: 100%;
+            padding: 8px;
+            background: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .card-btn:hover {
+            background: var(--primary-color);
+            color: #000;
+            border-color: var(--primary-color);
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .widget-title {
+            font-size: 16px;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .download-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .download-list li:last-child {
+            border-bottom: none;
+        }
+
+        .download-list a {
+            color: var(--text-main);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 70%;
+        }
+
+        .download-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .download-btn {
+            color: var(--primary-color);
+            font-size: 12px;
+            background: rgba(0, 229, 255, 0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .download-btn:hover {
+            background: var(--primary-color);
+            color: #000;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .guide-item {
+            display: flex;
+            gap: 16px;
+        }
+
+        .guide-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(41, 121, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-color);
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .guide-content h4 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .guide-content p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-dark);
+            border-top: 1px solid var(--border-color);
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 16px;
+                gap: 16px;
+            }
+            
+            nav ul {
+                gap: 16px;
+                font-size: 14px;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                <span>西西外挂网</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">最新更新</a></li>
+                    <li><a href="#">游戏分类</a></li>
+                    <li><a href="#">使用教程</a></li>
+                    <li><a href="#">防封攻略</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">立即下载</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>游戏辅助工具下载中心</h1>
+            <p>提供最新、稳定、安全的游戏辅助脚本与外挂，助力玩家轻松畅玩。支持多版本配置，内置防封机制。</p>
+            <div class="search-box">
+                <input type="text" placeholder="输入游戏名称搜索...">
+                <button type="button">搜索</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="stats-bar">
+        <div class="stats-inner">
+            <div class="stat-item">
+                <h3>500+</h3>
+                <p>收录游戏</p>
+            </div>
+            <div class="stat-item">
+                <h3>1.2w+</h3>
+                <p>每日下载量</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>安全无毒</p>
+            </div>
+            <div class="stat-item">
+                <h3>24h</h3>
+                <p>在线客服</p>
+            </div>
+        </div>
+    </div>
+
+    <main class="container">
+        <!-- Content Area -->
+        <div class="main-content">
+            <section class="section">
+                <div class="section-title">
+                    <h2>热门游戏工具</h2>
+                    <a href="#">查看更多 &rarr;</a>
+                </div>
+                <div class="game-grid">
+                    <article class="game-card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/game1/300/200" alt="王者荣耀辅助">
+                            <span class="card-tag">热门</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>王者荣耀多开/脚本</h3>
+                            <div class="card-meta">
+                                <span>版本: V3.5.2</span>
+                                <span>今日: 1.2w</span>
+                            </div>
+                            <button class="card-btn">立即下载</button>
+                        </div>
+                    </article>
+
+                    <article class="game-card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/game2/300/200" alt="和平精英透视">
+                            <span class="card-tag">透视</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>和平精英透视辅助</h3>
+                            <div class="card-meta">
+                                <span>版本: V2.8.0</span>
+                                <span>今日: 8.5k</span>
+                            </div>
+                            <button class="card-btn">立即下载</button>
+                        </div>
+                    </article>
+
+                    <article class="game-card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/game3/300/200" alt="原神自动刷图">
+                            <span class="card-tag">挂机</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>原神自动跑图脚本</h3>
+                            <div class="card-meta">
+                                <span>版本: V1.1.9</span>
+                                <span>今日: 6.2k</span>
+                            </div>
+                            <button class="card-btn">立即下载</button>
+                        </div>
+                    </article>
+
+                    <article class="game-card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/game4/300/200" alt="梦幻西游辅助">
+                            <span class="card-tag">搬砖</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>梦幻西游全自动搬砖</h3>
+                            <div class="card-meta">
+                                <span>版本: V5.0.1</span>
+                                <span>今日: 3.1k</span>
+                            </div>
+                            <button class="card-btn">立即下载</button>
+                        </div>
+                    </article>
+
+                    <article class="game-card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/game5/300/200" alt="英雄联盟脚本">
+                            <span class="card-tag">热门</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>英雄联盟智能施法脚本</h3>
+                            <div class="card-meta">
+                                <span>版本: V1.0.4</span>
+                                <span>今日: 9.8k</span>
+                            </div>
+                            <button class="card-btn">立即下载</button>
+                        </div>
+                    </article>
+
+                    <article class="game-card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/game6/300/200" alt="地下城辅助">
+                            <span class="card-tag">辅助</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>地下城与勇士一键连招</h3>
+                            <div class="card-meta">
+                                <span>版本: V2.3.5</span>
+                                <span>今日: 2.4k</span>
+                            </div>
+                            <button class="card-btn">立即下载</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="guide-section">
+                <div class="section-title">
+                    <h2>防封号与安全指南</h2>
+                </div>
+                <div class="guide-grid">
+                    <div class="guide-item">
+                        <div class="guide-icon">🛡️</div>
+                        <div class="guide-content">
+                            <h4>硬件码修改技术</h4>
+                            <p>详细介绍如何修改机器码、硬盘序列号等底层参数，降低检测风险。</p>
+                        </div>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-icon">🛡️</div>
+                        <div class="guide-content">
+                            <h4>IP地址伪装方法</h4>
+                            <p>使用加速器或代理工具，确保游戏环境纯净，避免异地登录检测。</p>
+                        </div>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-icon">🛡️</div>
+                        <div class="guide-content">
+                            <h4>常用杀毒软件误报处理</h4>
+                            <p>针对360、火绒等常见杀毒软件的误报情况，提供详细的排除设置教程。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-widget">
+                <h3 class="widget-title">最新下载</h3>
+                <ul class="download-list">
+                    <li>
+                        <a href="#">逆水寒手游自动寻路</a>
+                        <span class="download-btn">下载</span>
+                    </li>
+                    <li>
+                        <a href="#">梦幻诛仙2自动任务</a>
+                        <span class="download-btn">下载</span>
+                    </li>
+                    <li>
+                        <a href="#">CF穿越火线灵敏度</a>
+                        <span class="download-btn">下载</span>
+                    </li>
+                    <li>
+                        <a href="#">LOL智能补刀脚本</a>
+                        <span class="download-btn">下载</span>
+                    </li>
+                    <li>
+                        <a href="#">QQ飞车卡顿优化工具</a>
+                        <span class="download-btn">下载</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title">热门工具排行</h3>
+                <ul class="download-list">
+                    <li>
+                        <a href="#">DNF一键连招工具</a>
+                        <span class="download-btn">Top 1</span>
+                    </li>
+                    <li>
+                        <a href="#">原神体力助手</a>
+                        <span class="download-btn">Top 2</span>
+                    </li>
+                    <li>
+                        <a href="#">吃鸡八倍镜透视</a>
+                        <span class="download-btn">Top 3</span>
+                    </li>
+                    <li>
+                        <a href="#">剑网3自动刷副本</a>
+                        <span class="download-btn">Top 4</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title">下载须知</h3>
+                <p style="font-size: 13px; color: var(--text-muted); line-height: 1.8;">
+                    本站提供的所有工具仅供技术研究与学习使用，请勿用于任何非法用途。使用本站资源所产生的一切后果由使用者自行承担。
+                </p>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于西西外挂网</h4>
+                <ul>
+                    <li><a href="#">网站简介</a></li>
+                    <li><a href="#">服务条款</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">联系方式</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>游戏分类</h4>
+                <ul>
+                    <li><a href="#">MOBA类</a></li>
+                    <li><a href="#">FPS类</a></li>
+                    <li><a href="#">RPG类</a></li>
+                    <li><a href="#">棋牌类</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="#">安装教程</a></li>
+                    <li><a href="#">常见问题</a></li>
+                    <li><a href="#">版本更新</a></li>
+                    <li><a href="#">意见反馈</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 10px;">
+                    获取最新外挂资讯与活动信息。
+                </p>
+                <div style="display: flex; gap: 10px;">
+                    <div style="width: 32px; height: 32px; background: #334155; border-radius: 4px;"></div>
+                    <div style="width: 32px; height: 32px; background: #334155; border-radius: 4px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 西西外挂网 版权所有 | 本站资源仅供交流学习</p>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>
