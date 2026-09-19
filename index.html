@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>兽皇系列-顶级异兽图鉴与进化养成指南</title>
+    <meta name="description" content="兽皇系列官方网站，提供最全的异兽图鉴、进化路线解析、属性克制攻略及玩家社区讨论。探索从幼兽到神兽的进化奥秘，掌握养成技巧。">
+    <meta name="keywords" content="兽皇系列,异兽图鉴,进化养成,游戏攻略,宠物进化">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #4338ca;
+            --accent: #f59e0b;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-sub: #64748b;
+            --border: #e2e8f0;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; transition: color 0.2s; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; object-fit: cover; }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span { color: var(--text-main); }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary);
+        }
+
+        .btn-subscribe {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .btn-subscribe:hover {
+            background: var(--primary-dark);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: radial-gradient(circle at 20% 50%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 40%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 2rem;
+        }
+
+        .stat-item strong {
+            display: block;
+            font-size: 1.8rem;
+            color: var(--accent);
+        }
+
+        .stat-item span {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 40px;
+            border-left: 5px solid var(--primary);
+            padding-left: 20px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-sub);
+        }
+
+        /* Beast Grid */
+        .beast-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .beast-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border);
+        }
+
+        .beast-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+        }
+
+        .beast-img-wrapper {
+            position: relative;
+            height: 200px;
+            background: #e2e8f0;
+        }
+
+        .beast-img-wrapper img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .element-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .beast-info {
+            padding: 20px;
+        }
+
+        .beast-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .beast-type {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .beast-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+        }
+
+        .stat-bar {
+            width: 100%;
+            height: 6px;
+            background: #e2e8f0;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 5px;
+        }
+
+        .stat-fill {
+            height: 100%;
+            background: var(--primary);
+        }
+
+        .btn-card {
+            width: 100%;
+            padding: 10px;
+            background: #f1f5f9;
+            color: var(--text-main);
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .btn-card:hover {
+            background: #e2e8f0;
+        }
+
+        /* Evolution Path */
+        .evolution-container {
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .evolution-steps {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .step {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .step-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            border: 4px solid #e2e8f0;
+            overflow: hidden;
+            background: #f8fafc;
+        }
+
+        .step-icon img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .step h4 { margin-bottom: 5px; }
+        .step p { font-size: 0.85rem; color: var(--text-sub); }
+
+        .arrow {
+            color: var(--text-sub);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        /* Guide List */
+        .guide-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .guide-item {
+            display: flex;
+            background: white;
+            padding: 20px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .guide-icon {
+            width: 50px;
+            height: 50px;
+            background: #e0e7ff;
+            color: var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .guide-content h3 {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .guide-content p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        /* FAQ */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 20px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .faq-answer {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            padding-left: 24px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: #94a3b8;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .header-inner { flex-direction: column; gap: 15px; }
+            nav ul { gap: 15px; font-size: 0.9rem; }
+            .evolution-steps { flex-direction: column; }
+            .arrow { transform: rotate(90deg); margin: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            <span>兽皇系列</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">图鉴大全</a></li>
+                <li><a href="#">进化攻略</a></li>
+                <li><a href="#">社区论坛</a></li>
+                <li><a href="#">下载客户端</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="btn-subscribe">开始养成</a>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>探索未知的进化奥秘</h1>
+            <p>汇聚全系列异兽图鉴，提供详尽的属性分析、进化路线与战斗策略。在这里，每一只幼兽都有机会成为传说中的兽皇。</p>
+            <div style="margin-bottom: 30px;">
+                <a href="#featured" class="btn-subscribe" style="padding: 12px 30px; font-size: 1.1rem;">查看热门异兽</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <strong>500+</strong>
+                    <span>收录异兽</span>
+                </div>
+                <div class="stat-item">
+                    <strong>100+</strong>
+                    <span>进化路线</span>
+                </div>
+                <div class="stat-item">
+                    <strong>24h</strong>
+                    <span>实时更新</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section id="featured" class="container">
+        <div class="section-header">
+            <div class="section-title">
+                <h2>当季热门异兽</h2>
+                <p>当前版本中表现最强势的宠物与战斗伙伴</p>
+            </div>
+            <a href="#" style="color: var(--primary); font-weight: 600;">查看全部 &rarr;</a>
+        </div>
+
+        <div class="beast-grid">
+            <!-- Card 1 -->
+            <article class="beast-card">
+                <div class="beast-img-wrapper">
+                    <span class="element-badge" style="background: #ef4444;">火系</span>
+                    <img src="https://picsum.photos/seed/dragon1/400/300" alt="赤焰魔龙">
+                </div>
+                <div class="beast-info">
+                    <h3 class="beast-name">赤焰魔龙</h3>
+                    <span class="beast-type">传说级 · 龙族</span>
+                    <div class="beast-stats">
+                        <span>攻击: 98</span>
+                        <span>防御: 85</span>
+                        <span>速度: 90</span>
+                    </div>
+                    <div class="stat-bar"><div class="stat-fill" style="width: 98%"></div></div>
+                    <div class="stat-bar"><div class="stat-fill" style="width: 85%"></div></div>
+                    <div class="stat-bar"><div class="stat-fill" style="width: 90%"></div></div>
+                    <a href="#" class="btn-card">查看详情</a>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="beast-card">
+                <div class="beast-img-wrapper">
+                    <span class="element-badge" style="background: #3b82f6;">水系</span>
+                    <img src="https://picsum.photos/seed/leviathan/400/300" alt="深渊海皇">
+                </div>
+                <div class="beast-info">
+                    <h3 class="beast-name">深渊海皇</h3>
+                    <span class="beast-type">史诗级 · 水族</span>
+                    <div class="beast-stats">
+                        <span>攻击: 75</span>
+                        <span>防御: 95</span>
+                        <span>速度: 80</span>
+                    </div>
+                    <div class="stat-bar"><div class="stat-fill" style="width: 75%"></div></div>
+                    <div class="stat-bar"><div class="stat-fill" style="width: 95%"></div></div>
+                    <div class="stat-bar"><div class="stat-fill" style="width: 80%"></div></div>
+                    <a href="#" class="btn-card">查看详情</a>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="beast-card">
+                <div class="beast-img-wrapper">
+                    <span class="element-badge" style="background: #10b981;">草系</span>
+                    <img src="https://picsum.photos/seed/fern/400/300" alt="森罗古树">
+                </div>
+                <div class="beast-info">
+                    <h3 class="beast-name">森罗古树</h3>
+                    <span class="beast-type">稀有级 · 植物</span>
+                    <div class="beast-stats">
+                        <span>攻击: 60</span>
+                        <span>防御: 92</span>
+                        <span>速度: 40</span>
+                    </div>
+                    <div class="stat-bar"><div class="stat-fill" style="width: 60%"></div></div>
+                    <div class="stat-bar"><div class="stat-fill" style="width: 92%"></div></div>
+                    <div class="stat-bar"><div class="stat-fill" style="width: 40%"></div></div>
+                    <a href="#" class="btn-card">查看详情</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Evolution Section -->
+    <section class="container" style="background: #f1f5f9;">
+        <div class="section-header">
+            <div class="section-title">
+                <h2>经典进化路线</h2>
+                <p>从幼体到完全体的蜕变过程解析</p>
+            </div>
+        </div>
+        <div class="evolution-container">
+            <div class="evolution-steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <img src="https://picsum.photos/seed/baby/100/100" alt="幼兽">
+                    </div>
+                    <h4>幼体阶段</h4>
+                    <p>基础属性较低，需通过特定食物或地点唤醒。</p>
+                </div>
+                <div class="arrow">&rarr;</div>
+                <div class="step">
+                    <div class="step-icon">
+                        <img src="https://picsum.photos/seed/teen/100/100" alt="成长期">
+                    </div>
+                    <h4>成长期</h4>
+                    <p>获得第二形态，解锁特殊技能，性格逐渐稳定。</p>
+                </div>
+                <div class="arrow">&rarr;</div>
+                <div class="step">
+                    <div class="step-icon">
+                        <img src="https://picsum.photos/seed/prime/100/100" alt="完全体">
+                    </div>
+                    <h4>完全体</h4>
+                    <p>属性大幅提升，外观发生质变，拥有神兽特征。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guide Section -->
+    <section class="container">
+        <div class="section-header">
+            <div class="section-title">
+                <h2>新手养成指南</h2>
+                <p>帮助新手玩家快速上手并避免常见误区</p>
+            </div>
+        </div>
+        <div class="guide-list">
+            <div class="guide-item">
+                <div class="guide-icon">⚡</div>
+                <div class="guide-content">
+                    <h3>属性克制与配队策略</h3>
+                    <p>了解火系、水系、草系之间的克制关系是获胜的关键。推荐使用双属性组合来应对复杂的战场环境。</p>
+                </div>
+            </div>
+            <div class="guide-item">
+                <div class="guide-icon">🧬</div>
+                <div class="guide-content">
+                    <h3>进化材料获取途径</h3>
+                    <p>不同的进化阶段需要不同的稀有材料。详细列出野外副本与商城兑换的获取清单。</p>
+                </div>
+            </div>
+            <div class="guide-item">
+                <div class="guide-icon">💎</div>
+                <div class="guide-content">
+                    <h3>资源管理与投资建议</h3>
+                    <p>如何合理分配钻石、金币与经验药水？本指南提供从零氪到微氪的全方位资源规划方案。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="container">
+        <div class="section-header">
+            <div class="section-title">
+                <h2>常见问题 (FAQ)</h2>
+                <p>关于兽皇系列的常见疑问解答</p>
+            </div>
+        </div>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <div class="faq-question">Q: 兽皇系列支持跨平台存档吗？</div>
+                <div class="faq-answer">目前支持iOS、Android及PC端的云存档同步，确保您的养成进度不丢失。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q: 如何解锁隐藏的传说异兽？</div>
+                <div class="faq-answer">需要完成“远古遗迹”系列的限时挑战，并收集齐所有碎片。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q: 游戏是否需要联网？</div>
+                <div class="faq-answer">核心玩法需要联网进行联机对战和活动参与，离线模式下仅可查看图鉴和进行基础养成。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q: 兽皇系列是什么类型的游戏？</div>
+                <div class="faq-answer">这是一款结合了RPG养成与策略战斗的异兽收集类网页游戏。</div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>关于兽皇系列</h4>
+                <p style="font-size: 0.9rem; line-height: 1.6;">
+                    致力于为玩家提供最全的异兽图鉴与最优质的养成体验。我们相信每一个生命都有进化的潜能。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#">游戏公告</a></li>
+                    <li><a href="#">版本更新</a></li>
+                    <li><a href="#">玩家社区</a></li>
+                    <li><a href="#">联系客服</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="#">新手入门</a></li>
+                    <li><a href="#">活动规则</a></li>
+                    <li><a href="#">账号安全</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 兽皇系列官方团队. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+              </html>
