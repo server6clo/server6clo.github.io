@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不知火舞被俘记 - 经典格斗同人创作与角色深度解析</title>
+    <meta name="description" content="专注《拳皇》系列不知火舞同人作品与角色分析。提供经典同人漫画《不知火舞被俘记》剧情回顾、角色设定深度解析、同人创作风格探讨及同人图欣赏。">
+    <meta name="keywords" content="不知火舞, 拳皇, 不知火舞被俘记, 同人漫画, 角色解析, 格斗游戏">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff4757;
+            --secondary-color: #2f3542;
+            --accent-color: #ffa502;
+            --bg-color: #f1f2f6;
+            --card-bg: #ffffff;
+            --text-main: #2f3542;
+            --text-light: #747d8c;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2f3542 0%, #57606f 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 20% 50%, rgba(255, 71, 87, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Main Layout */
+        .main-container {
+            max-width: var(--container-width);
+            margin: 40px auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+        }
+
+        /* Content Section */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        section {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--secondary-color);
+            border-left: 4px solid var(--primary-color);
+            padding-left: 12px;
+        }
+
+        /* Character Profile */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 30px;
+        }
+
+        .profile-img {
+            width: 100%;
+            aspect-ratio: 1;
+            background-color: #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            object-fit: cover;
+        }
+
+        .profile-info h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .profile-info p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .stat-row {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        .stat-item strong {
+            display: block;
+            color: var(--secondary-color);
+        }
+
+        /* Story Synopsis */
+        .synopsis-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-main);
+        }
+
+        .synopsis-content h4 {
+            margin: 20px 0 10px;
+            color: var(--secondary-color);
+        }
+
+        .synopsis-content p {
+            margin-bottom: 15px;
+        }
+
+        .synopsis-content ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .synopsis-content li {
+            margin-bottom: 8px;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 6px;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 20px 10px 10px;
+            color: white;
+            font-size: 0.85rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--bg-color);
+        }
+
+        .related-list li {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed var(--bg-color);
+        }
+
+        .related-list li:last-child {
+            border-bottom: none;
+        }
+
+        .related-list a {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            display: block;
+        }
+
+        .related-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .related-list span {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            border-bottom: 1px solid var(--bg-color);
+            padding: 15px 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq-answer {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: rgba(255,255,255,0.6);
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+
+            nav ul {
+                margin-top: 10px;
+                gap: 15px;
+                font-size: 0.85rem;
+            }
+
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <a href="#" class="logo">
+            <span>同人</span>档案室
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">作品库</a></li>
+                <li><a href="#">角色图鉴</a></li>
+                <li><a href="#">社区讨论</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>不知火舞被俘记：深度解析经典同人创作与角色魅力</h1>
+            <p>探索《拳皇》系列中人气角色不知火舞的同人创作世界，了解《不知火舞被俘记》等作品的背景设定、角色分析及同人文化现象。</p>
+            <div class="hero-tags">
+                <span class="tag">#格斗同人</span>
+                <span class="tag">#角色深度解析</span>
+                <span class="tag">#同人漫画</span>
+                <span class="tag">#艺术创作</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="main-container">
+        <!-- Left Content -->
+        <div class="content-area">
+            
+            <!-- Character Profile -->
+            <article class="section">
+                <div class="section-header">
+                    <h2 class="section-title">角色档案：不知火舞</h2>
+                </div>
+                <div class="profile-grid">
+                    <img src="https://picsum.photos/seed/mai/400/400.jpg" alt="不知火舞角色形象" class="profile-img">
+                    <div class="profile-info">
+                        <h3>忍术世家的不知火流传人</h3>
+                        <p>不知火舞是日本SNK公司开发的格斗游戏《拳皇》系列中的核心角色之一。作为“不知火流”忍术的传人，她性格火爆、直率，擅长使用扇子进行战斗。在游戏设定中，她是草薙京的青梅竹马，常以参加格斗大赛和寻找火之神器为剧情线索。</p>
+                        <div class="stat-row">
+                            <div class="stat-item">
+                                <strong>称号</strong>
+                                <span>不知火流忍术传人</span>
+                            </div>
+                            <div class="stat-item">
+                                <strong>武器</strong>
+                                <span>不知火扇</span>
+                            </div>
+                            <div class="stat-item">
+                                <strong>性格</strong>
+                                <span>热血、勇敢、正义</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Story Synopsis -->
+            <article class="section">
+                <div class="section-header">
+                    <h2 class="section-title">剧情解析：同人作品《不知火舞被俘记》</h2>
+                </div>
+                <div class="synopsis-content">
+                    <p>同人作品《不知火舞被俘记》是格斗游戏角色同人创作中具有代表性的题材之一。这类作品通常基于原作角色的性格、能力及经典场景进行二次创作，通过构建全新的剧情框架，展现角色在特定情境下的另一面。</p>
+                    
+                    <h4>创作背景与设定</h4>
+                    <p>在原作设定中，不知火舞拥有极高的战斗技巧和强大的意志力。同人创作者往往会利用这一核心特质，设计出充满张力的冲突场景。在《不知火舞被俘记》这类作品中，剧情通常围绕角色遭遇强敌、陷入绝境或因特殊原因被限制行动展开，重点在于展现角色的心理活动、应对策略以及不屈的战斗精神。</p>
+
+                    <h4>艺术表现与风格</h4>
+                    <p>这类同人作品在视觉上通常强调角色的经典形象，通过精细的线条、丰富的色彩来还原角色的标志性动作（如飞翔踢）或服饰细节。除了静态漫画，许多作品也会结合动态影像或互动叙事，增强观众的沉浸感。需要注意的是，此类内容多属于非官方创作，旨在艺术表达和娱乐，并非游戏官方剧情。</p>
+
+                    <h4>常见讨论点</h4>
+                    <ul>
+                        <li><strong>角色成长：</strong> 观众常关注角色在被“俘”或困境中如何保持冷静，展现智慧与勇气。</li>
+                        <li><strong>剧情合理性：</strong> 讨论设定是否符合原作逻辑，以及反派角色的设计是否具有挑战性。</li>
+                        <li><strong>视觉还原度：</strong> 评价画师对角色动作捕捉和表情细节的还原程度。</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Gallery -->
+            <article class="section">
+                <div class="section-header">
+                    <h2 class="section-title">精选同人作品欣赏</h2>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/mai1/300/400.jpg" alt="同人作品1">
+                        <div class="gallery-overlay">战斗姿态</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/mai2/300/400.jpg" alt="同人作品2">
+                        <div class="gallery-overlay">忍术特训</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/mai3/300/400.jpg" alt="同人作品3">
+                        <div class="gallery-overlay">团队合影</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/mai4/300/400.jpg" alt="同人作品4">
+                        <div class="gallery-overlay">经典回眸</div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- FAQ -->
+            <article class="section">
+                <div class="section-header">
+                    <h2 class="section-title">常见问题 (FAQ)</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item active">
+                        <div class="faq-question">《不知火舞被俘记》是官方游戏剧情吗？ <span>+</span></div>
+                        <div class="faq-answer">不是。这是由民间画师或创作者基于《拳皇》角色不知火舞制作的同人作品，属于非官方二次创作。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">这类同人作品的创作目的是什么？ <span>+</span></div>
+                        <div class="faq-answer">主要目的是为了展示创作者的艺术技巧，探索角色的不同可能性，以及满足粉丝对角色互动和故事的想象。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何安全地观看和下载同人作品？ <span>+</span></div>
+                        <div class="faq-answer">建议访问正规的同人作品分享平台或画师个人主页，注意查看作品的使用协议和版权声明，避免访问来源不明的链接。</div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Right Sidebar -->
+        <aside>
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">相关角色</h3>
+                <ul class="related-list">
+                    <li>
+                        <a href="#">八神庵</a>
+                        <span>拳皇宿敌</span>
+                    </li>
+                    <li>
+                        <a href="#">特瑞·博加德</a>
+                        <span>道馆馆主</span>
+                    </li>
+                    <li>
+                        <a href="#">京</a>
+                        <span>草薙京挚友</span>
+                    </li>
+                    <li>
+                        <a href="#">麻宫雅典娜</a>
+                        <span>偶像歌手</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">热门标签</h3>
+                <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                    <span class="tag">格斗</span>
+                    <span class="tag">同人</span>
+                    <span class="tag">漫画</span>
+                    <span class="tag">女性角色</span>
+                    <span class="tag">SNK</span>
+                </div>
+            </div>
+
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">创作指南</h3>
+                <p style="font-size:0.9rem; color:var(--text-light); margin-bottom:10px;">
+                    想要参与同人创作？请尊重原作版权，保持创作热情。关注角色性格一致性，使用合理的剧情逻辑。
+                </p>
+                <a href="#" style="color:var(--primary-color); font-size:0.9rem; font-weight:bold;">阅读更多指南 &rarr;</a>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="#">关于我们</a>
+            <a href="#">免责声明</a>
+            <a href="#">投稿指南</a>
+            <a href="#">联系合作</a>
+        </div>
+        <p class="copyright">
+            本站内容均为用户上传分享，仅供学习交流使用。所有角色版权归SNK公司所有。<br>
+            © 2023 同人档案室 - 保留所有权利
+        </p>
+    </div>
+</footer>
+
+<script>
+    // Simple FAQ Toggle Logic
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close others
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current
+                item.classList.toggle('active');
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
